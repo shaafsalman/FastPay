@@ -1,0 +1,756 @@
+﻿/* 
+==============================
+Global Styles
+==============================
+*/
+
+/* Reset default margin, padding and width */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Font */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+/* 
+==============================
+Main Container
+==============================
+*/
+
+.main {
+
+    flex-direction: row;
+    width:100%;
+    margin-bottom:30px;
+}
+
+/* 
+==============================
+Sidebar
+==============================
+*/
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    z-index: 1;
+}
+.logo {
+    color: white;
+    font-size: 24px;
+    margin-bottom: 30px;
+    margin-left:auto;
+}
+
+    .sidebar .logo {
+        color: white;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .sidebar ul {
+        list-style: none;
+    }
+
+        .sidebar ul li {
+            margin-bottom: 10px;
+        }
+
+            .sidebar ul li a {
+                color: white;
+                text-decoration: none;
+                padding: 10px;
+                display: block;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+            }
+
+                .sidebar ul li a:hover,
+                .sidebar ul li a.selected {
+                    background-color: #555;
+                }
+
+                .sidebar ul li a i {
+                    margin-right: 10px;
+                }
+
+/* 
+==============================
+Content Header
+==============================
+*/
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+    margin-left: 280px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-top: 20px;
+}
+
+    .content-header h1 {
+        font-size: 30px;
+        margin: 0;
+    }
+
+    .content-header button {
+        padding: 10px 20px;
+        background-color: #343a40;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+        width: max-content;
+    }
+
+        .content-header button:hover {
+            background-color: #fff;
+            color: #343a40;
+            border: 1px solid #343a40;
+        }
+
+/* 
+==============================
+Transaction History Grid
+==============================
+*/
+
+.transaction-history-grid {
+    width:auto;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-left:280px;
+
+    height:auto;
+    margin-bottom:100px;
+}
+
+    .transaction-history-grid th,
+    .transaction-history-grid td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .transaction-history-grid th {
+        background-color: #333;
+        color: white;
+    }
+
+    .transaction-history-grid tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .transaction-history-grid tr:hover {
+        background-color: #ddd;
+    }
+
+    .transaction-history-grid tr:last-child td {
+        border-bottom: none;
+    }
+
+/* 
+==============================
+Beneficiaries Container
+==============================
+*/
+.beneficiary {
+    margin-left:280px;
+    display: block;
+    width: 300px;
+    background-color: #f2f2f2;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.beneficiaries-container {
+    margin-left: 280px;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+.beneficiary {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    width:100%;
+}
+
+.beneficiary-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.beneficiary-avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #ddd;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.beneficiary-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.beneficiary-name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.beneficiary-email {
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+}
+
+.beneficiary-actions {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-left: 20px;
+}
+
+.beneficiary-relationship {
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.beneficiary-actions button {
+    padding: 8px 15px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #e74c3c;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+    .beneficiary-actions button:hover {
+        background-color: #c0392b;
+    }
+
+/* 
+==============================
+Modal
+==============================
+*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+/* 
+==============================
+Profile Info
+==============================
+*/
+
+.profile-info {
+
+    display: block;
+    align-items: center;
+    background-color: #555;
+    border-radius: 6px;
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-left: 280px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    margin-top: 30px;
+    padding: 30px;
+}
+
+    .profile-info img {
+        border-radius: 50%;
+        width: 100px;
+        height: 100px;
+        margin-right: 20px;
+        object-fit: cover;
+    }
+
+    .profile-info h2 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+
+    .profile-info p {
+        font-size: 16px;
+        margin-bottom: 0;
+    }
+/* 
+==============================
+User Details
+==============================
+*/
+.profile-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .profile-info img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+
+    .profile-info div h2 {
+        font-size: 28px;
+        margin-bottom: 5px;
+    }
+
+    .profile-info div p {
+        margin: 0;
+        color: #777;
+        font-size: 16px;
+    }
+
+/* User Details Styles */
+.user-details {
+    background-color: #f7f7f7;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 20px;
+    margin-left: 280px;
+    margin-right: 30px;
+    width:auto;
+}
+
+    .user-details h3 {
+        margin-right: 30px;
+        font-size: 22px;
+        margin-bottom: 20px;
+    }
+
+    .user-details table {
+        width: 100%;
+        border-collapse: collapse;
+
+    }
+
+    .user-details th {
+        font-weight: bold;
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        text-align: left;
+        width: max-content;
+    }
+
+    .user-details td {
+        padding: 10px 0;
+        border-bottom: 1px solid #ccc;
+        width: max-content;
+    }
+
+.update-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    width:max-content;
+}
+
+    .update-button:hover {
+        background-color: #fff;
+        color: #343a40;
+        border: 1px solid #343a40;
+    }
+/* 
+==============================
+Table and Input
+==============================
+*/
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+th,
+td {
+    padding: 6px 8px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="password"]:focus {
+        border-color: #4a47a3;
+        box-shadow: 0 0 6px rgba(74, 71, 163, 0.2);
+    }
+
+/* 
+==============================
+Transfer Form Styles
+==============================
+*/
+
+.transfer-form {
+    display: flex;
+    flex-direction: column;
+}
+
+    .transfer-form label {
+        font-size: 16px;
+        margin-bottom: 5px;
+        margin-top: 20px;
+    }
+
+    .transfer-form input[type="text"],
+    .transfer-form input[type="number"] {
+        font-size: 14px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        width: 100%;
+    }
+
+button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+    button:hover {
+        background-color: #0069d9;
+    }
+
+#transferStatus {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+/*///////////////////////
+wallet
+////////////////
+*/
+
+/* Account Balance */
+
+
+
+/* styles.css */
+.content {
+    margin-left: 280px;
+    padding: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+    .search-container input[type="text"] {
+        padding: 5px;
+        border: 1px solid #ccc;
+        flex-grow: 1;
+        margin-right: 5px;
+    }
+
+    .search-container button[type="submit"] {
+        padding: 5px 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+.subscription {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.subscription-icon {
+    font-size: 24px;
+    margin-right: 15px;
+}
+
+.subscription-details {
+    flex-grow: 1;
+}
+.subscribe-button,
+.cancel-subscription-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.subscribe-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+    .subscribe-button:hover {
+        background-color: #3e8e41;
+    }
+
+    .subscribe-button:active {
+        background-color: #27632c;
+    }
+
+    .subscribe-button.subscribed {
+        background-color: dimgrey;
+        cursor: not-allowed;
+    }
+
+.cancel-subscription-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+    .cancel-subscription-button:hover {
+        background-color: #d32f2f;
+    }
+
+    .cancel-subscription-button:active {
+        background-color: #b71c1c;
+    }
+
+    .cancel-subscription-button:disabled {
+        background-color: dimgrey;
+        cursor: not-allowed;
+    }
+
+    .cancel-subscription-button:enabled {
+        box-shadow: 0px 0px 10px 0px rgba(244,67,54,0.7);
+    }
+
+
+
+#userSubscriptions {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#allSubscriptions {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+.Button-grid-content 
+    {
+       margin-top:30px;
+       margin-bottom:30px;
+
+       display: grid;
+       grid-template-columns: repeat(2,450px);
+       grid-template-rows: repeat(2, 70px); /* Set the row height to 150px */
+       grid-gap: 0px; /* Add a gap between grid items */
+       overflow-y: auto; /* Add vertical scroll if content overflows */
+       margin-left:350px;
+    }
+
+    .facility-item {
+        align-self:center;
+        padding: 10px 20px;
+        background-color: #343a40;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: 0.3s;
+        width:380px;
+        height:50px;
+    }
+    .facility-item a {
+        color: #fff; /* Change the color of the button text to white */
+        text-decoration: none;
+    }
+    .facility-item:hover
+    {
+         background-color: #fff;
+        color: #343a40;
+        border: 1px solid #343a40;
+    }
+    .facility-item:hover a {
+        color: #343a40; 
+    }
+
+    .facility-item i {
+       font-size: 24px;
+       margin-right: 10px;
+       color: #fff;
+       align-self:center;
+    }
+    .facility-item:hover i {
+        color: #343a40; 
+    }
+
+
+
+    .bills-grid {
+        margin-top: 30px;
+        margin-left: 320px;
+        width: 900px;
+    }
+
+    .bills-grid .row {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+    }
+
+    .bills-grid .row:nth-child(odd) {
+        background-color: #f8f8f8;
+    }
+
+    .pay-btn {
+         background-color: #4CAF50;
+         color: white;
+         border: none;
+         cursor: pointer;
+         margin-right: 10px;
+         margin-left:70px;
+         width:100px;
+    }
+    .pay-btn:hover
+    {
+        background-color: #3e8e41;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
